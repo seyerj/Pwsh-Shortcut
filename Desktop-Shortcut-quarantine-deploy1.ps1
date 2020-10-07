@@ -8,7 +8,7 @@
 New-EventLog -LogName 'Quarantine-Shortcut-Deploy' -Source 'DC_PS_Script'
 
 # Set target for Shortcut
-$TargetFile = "https://fortimail.co.douglas.or.us/"
+$TargetFile = "https://website.com/"
 
 # Set location for shortcut.  Public Desktop makes it available for all users
 $ShortcutFile = "$env:Public\Desktop\Quarantine_Email.lnk"
@@ -16,7 +16,7 @@ $ShortcutFile = "$env:Public\Desktop\Quarantine_Email.lnk"
 # Create the shortcut
 $WScriptShell = New-Object -ComObject WScript.Shell
 # icon location
-$iconlocation = "\\dcit\software\Scripts\Quarantine-Fortimail\envelopebang.ico"
+$iconlocation = "\\share\path\folder\iconfile.ico"
 $iconfile = "iconfile=" + $iconlocation
 $Shortcut = $WScriptShell.CreateShortcut($ShortcutFile)
 $Shortcut.IconLocation = $iconlocation # icon index 0
